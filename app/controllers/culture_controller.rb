@@ -51,13 +51,50 @@ class CultureController < ApplicationController
         @p = Newpf.all
         
     end
-    def single
-       
-      
+    
+    def single          
        
        @pid = Newpf.find(params[:id])
         
     end
     
+    def add_update
+       
+        @pid = Newpf.find(params[:id])
+        
+    end
     
+    def add_update_1
+        
+        @pid = Newpf.find(params[:id])
+        @pid.pf_title = params[:new_pf_title]
+        @pid.pf_add_br = params[:new_pf_add_br]
+        @pid.pf_infor = params[:new_pf_infor]
+        @pid.pf_image = params[:new_pf_image]
+        @pid.pf_date = params[:new_dt_due]
+        @pid.pf_time = params[:new_pf_time]
+        @pid.musical = params[:new_musical]
+        @pid.play = params[:new_play]
+        @pid.concert = params[:new_concert]
+        @pid.classic = params[:new_classic]
+        @pid.jeonsi = params[:new_jeonsi]
+        @pid.sport = params[:new_sport]
+        @pid.busking = params[:new_busking]
+        @pid.amateur = params[:new_amateur]
+        @pid.etc = params[:new_etc]
+        @pid.save
+        
+        redirect_to '/culture/single/' + @pid.id.to_s
+            
+    end
+    
+    def delete
+        
+        @pid = Newpf.find(params[:id])
+        
+        @pid.destroy
+        
+        redirect_to '/culture/explore'
+        
+    end
 end

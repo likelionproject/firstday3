@@ -192,13 +192,14 @@
               $('#input_form').append("<input id='mapdata-lat' type='hidden' name='pf_add_lat' value='"+ marker.getPosition().G +"' />");
               $('#input_form').append("<input id='mapdata-lng' type='hidden' name='pf_add_lng' value='"+ marker.getPosition().K +"' />");
             }
-            var items = []
-            var address_1
+            var items = [];
+            var address_1;
+            
             $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + marker.getPosition().G + "," + marker.getPosition().K + "&language=ko&sensor=false", 
               function(data){
-                address = data.results.formatted_address
+                $("#address").attr("value", data.results[0].formatted_address);
               });
-            $("#address").attr("value", address_1);
+        });
         
         map.mapTypes.set('Styled', styledMapType);
         map.setCenter(new google.maps.LatLng(37.545087, 126.987403));   // 기본 화면 center 설정

@@ -1,4 +1,4 @@
-(function initMap($) {
+(function($) {
     "use strict";
 
     // Custom options for map
@@ -43,113 +43,17 @@
 
     // json for properties markers on map 마커 성격 지정
     var props = [{
-        title : 'Modern Residence in New York', // 제목
-        image : '1-1-thmb.png', // 사진
+        title : "<%=@pid.pf_title%>", // 제목
+        image : "<%=@pid.pf_image%>", // 사진
         type : 'For Sale',  // 유,무료
         price : '$1,550,000', // 가격
-        area : '3430 Sq Ft', // 정확한 장소
+        area :"<%=@pid.pf_add_br%>", // 정확한 장소
         position : {    // marker 위치
-            lat : 37.555430, 
-            lng : 127.046025
+            lat : "<%=@pid.pf_add_lat%>", 
+            lng : "<%=@pid.pf_add_lng%>"
         },
         markerIcon : "marker-green.png"
-    }, {
-        title : 'Hauntingly Beautiful Estate',
-        image : '2-1-thmb.png',
-        type : 'For Rent',
-        price : '$1,750,000',
-        area : '4430 Sq Ft',
-        position : {
-            lat : 37.555391, 
-            lng : 126.936835
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Sophisticated Residence',
-        image : '3-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,340,000',
-        area : '2640 Sq Ft',
-        position : {
-            lat : 37.547498, 
-            lng : 126.922801
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Ars-Amandi 7번째 정기공연',
-        image : 'yo.jpg',
-        type : '공연 중',
-        position : {
-            lat : 37.534839, 
-            lng : 126.986488
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Luxury Mansion',
-        image : '5-1-thmb.png',
-        type : 'For Rent',
-        price : '$2,350,000',
-        area : '2750 Sq Ft',
-        position : {
-            lat : 37.503592, 
-            lng : 126.975845
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Modern Residence in New York',
-        image : '1-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,550,000',
-        area : '3430 Sq Ft',
-        position : {
-            lat : 37.510492, 
-            lng : 127.100625
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Hauntingly Beautiful Estate',
-        image : '2-1-thmb.png',
-        type : 'For Rent',
-        price : '$1,750,000',
-        area : '4430 Sq Ft',
-        position : {
-            lat : 37.557251, 
-            lng : 127.150235
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Sophisticated Residence',
-        image : '3-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,340,000',
-        area : '2640 Sq Ft',
-        position : {
-            lat : 40.687417,
-            lng : -73.982653
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'House With a Lovely Glass-Roofed Pergola',
-        image : '4-1-thmb.png',
-        type : 'For Sale',
-        price : '$1,930,000',
-        area : '2800 Sq Ft',
-        position : {
-            lat : 40.694120,
-            lng : -73.974413
-        },
-        markerIcon : "marker-green.png"
-    }, {
-        title : 'Luxury Mansion',
-        image : '5-1-thmb.png',
-        type : 'For Rent',
-        price : '$2,350,000',
-        area : '2750 Sq Ft',
-        position : {
-            lat : 40.682665,
-            lng : -74.000934
-        },
-        markerIcon : "marker-green.png"
+    
     }];
 
     // custom infowindow object
@@ -190,7 +94,7 @@
             });
             var infoboxContent = '<div class="infoW">' +
                                     '<div class="propImg">' +
-                                        '<img src="/images/prop/' + prop.image + '">' +
+                                        '<img src= ' + prop.image + '>' +
                                         '<div class="propBg">' +
                                             '<div class="propPrice">' + prop.price + '</div>' +
                                             '<div class="propType">' + prop.type + '</div>' +
@@ -628,39 +532,5 @@
         }
     });
 
-    $('#tags').tagsInput({
-        'height': 'auto',
-        'width': '100%',
-        'defaultText': 'Add a tag',
-    });
-
-    $('#datepicker').datepicker();
-
-    // functionality for autocomplete address field
-    if ($('#address').length > 0) {
-        var address = document.getElementById('address');
-        var addressAuto = new google.maps.places.Autocomplete(address);
-
-        google.maps.event.addListener(addressAuto, 'place_changed', function() {
-            var place = addressAuto.getPlace();
-
-            if (!place.geometry) {
-                return;
-            }
-            if (place.geometry.viewport) {
-                map.fitBounds(place.geometry.viewport);
-            } else {
-                map.setCenter(place.geometry.location);
-            }
-            newMarker.setPosition(place.geometry.location);
-            newMarker.setVisible(true);
-            $('#latitude').text(newMarker.getPosition().lat());
-            $('#longitude').text(newMarker.getPosition().lng());
-
-            return false;
-        });
-    }
-
-    $('input, textarea').placeholder();
-
+  
 })(jQuery);
