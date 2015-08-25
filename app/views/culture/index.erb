@@ -16,12 +16,12 @@
             
             <!--로고 들어갈 곳-->
             <div class="home-header">
-                <div class="home-logo osLight"><span class="fa fa-home"></span> 뭐한대?!</div>
+                <div class="home-logo osLight"><span class="fa fa-music"></span> 뭐한대?!</div>
                 <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
                 <div class="home-nav">
                     <ul>
                         <li><a href="/culture/explore">공연 모아보기</a></li>
-                        <li><a href="/">공연자 모아보기</a></li>
+                        <li><a href="/culture/pfadd">공연자 모아보기</a></li>
 
                         
                         <% unless user_signed_in? %>
@@ -66,7 +66,7 @@
         <div class="home-wrapper">
             <div class="home-content">
                 
-                <h2 class="osLight">오늘의 베스트 기대 공연</h2>
+                <h2 class="osLight">이번 주 인기 공연</h2>
                 <div class="row pb40">
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                         <a href="/culture/single" class="propWidget-2">
@@ -204,7 +204,11 @@
             </div>
         </div>
               
-        
+        <div class="highlight">
+            <div class="h-title osLight">띠</div>
+            <div class="h-text osLight"> 쉽게등록하고 쉽게 홍보하세요</div>
+        </div>
+
         <!--내용-->
         <div class="home-wrapper">
             <div class="home-content">

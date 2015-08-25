@@ -116,9 +116,9 @@
                     <div class="clearfix"></div>
                 </div>
                 <ul>
-                    <li><a href="explore.html"><span class="navIcon icon-compass"></span><span class="navLabel">공연<br>모아보기</span></a></li>
-                    <li><a href="single.html"><span class="navIcon icon-home"></span><span class="navLabel">공연자<br>모아보기</span></a></li>
-                    <li><a href="add.html"><span class="navIcon icon-plus"></span><span class="navLabel">공연 등록</span></a></li>
+                    <li><a href="/culture/explore"><span class="navIcon icon-compass"></span><span class="navLabel">공연<br>모아보기</span></a></li>
+                    <li><a href="/culture/pfadd"><span class="navIcon icon-home"></span><span class="navLabel">공연자<br>모아보기</span></a></li>
+                    <li><a href="/culture/add"><span class="navIcon icon-plus"></span><span class="navLabel">공연 등록</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -142,7 +142,7 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="/images/prop/4-1.png" alt="First slide">
+                                <img src="<%=@pid.pf_image%>" alt="First slide"  width="685px" height="411px">
                                 <div class="container">
                                     <div class="carousel-caption">
                                         
@@ -183,8 +183,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                 <div class="summaryItem">
-                                    <h1 class="pageTitle">Ars-Amandi 7번째 정기공연</h1>
-                                    <div class="address"><span class="icon-pointer"></span> 홍대입구 나나극장 7PM</div>
+                                    <h1 class="pageTitle"><%=@pid.pf_title%></h1>
+                                    <div class="address"><span class="glyphicon glyphicon-time"></span> <%=@pid.pf_date%> <%=@pid.pf_time%></div>
+                                    <div class="address"><span class="icon-pointer"></span> <%=@pid.pf_add_br%></div>
+                                    <div class="address"><span class="glyphicon glyphicon-bullhorn"></span> <%=@pid.pf_infor%></div>
                                     <ul class="rating">
                                         <li><a href="#"><span class="fa fa-star"></span></a></li>
                                         <li><a href="#"><span class="fa fa-star"></span></a></li>

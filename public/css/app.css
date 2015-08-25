@@ -110,20 +110,20 @@
     color: #fff;
 }
 .btn-green {
-    background-color: #0eaaa6;
+    background-color: #FFBC1F;
     color: #fff;
 }
 .btn-o.btn-green {
     background-color: transparent;
-    color: #0eaaa6;
-    border-color: #0eaaa6;
+    color: #252525;
+    border-color: #252525;
 }
 .no-touch .btn-green:hover,
 .btn-green:focus,
 .btn-green:active,
 .btn-green.active,
 .open > .dropdown-toggle.btn-green {
-    background-color: #068b85;
+    background-color: #402F08;
     color: #fff;
 }
 .no-touch .btn-o.btn-green:hover,
@@ -131,7 +131,7 @@
 .btn-o.btn-green:active,
 .btn-o.btn-green.active,
 .open > .dropdown-toggle.btn-o.btn-green {
-    background-color: #0eaaa6;
+    background-color: #252525;
     color: #fff;
 }
 .btn-blue {
@@ -396,7 +396,7 @@
 }
 .bg-green {
     color: #fff;
-    background-color: #0eaaa6;
+    background-color: #252525;
 }
 .no-touch a.bg-green:hover {
     background-color: #068b85;
@@ -902,7 +902,7 @@ a.userHandler .counter {
     left: 12px;
 }
 #leftSide {
-    background-color: #7F7154;
+    background-color: #252525;
     position: absolute;
     top: 60px;
     left: 0;
@@ -966,7 +966,7 @@ a.userHandler .counter {
     text-align: left;
 }
 .no-touch .leftNav ul li:hover a, .leftNav ul li.onTap a {
-    background-color: #067670;
+    background-color: #FFBC1F;
     color: #fff;
 }
 .expanded .leftNav > ul > li.onTap > a {
@@ -1452,6 +1452,17 @@ a.btn.viewInfo {
     background-color: #f3f3f3;
     width: 50%;
     height: 100px;
+    border-top: 1px solid #e8e8e8;
+    float: right;
+    -webkit-overflow-scrolling: touch;
+}
+
+#content2 {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 100%;
     border-top: 1px solid #e8e8e8;
     float: right;
     -webkit-overflow-scrolling: touch;
@@ -3533,8 +3544,8 @@ h1.pageTitle {
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #0eaaa6;
-    border-color: #0eaaa6;
+    background-color: #FFBC1F;
+    border-color: #FFBC1F;
 }
 .labelsContainer {
     margin-bottom: 20px;

@@ -26,17 +26,11 @@
             <div class="logo">
                 <a href="/">
                     <span class="fa fa-home marker"></span>
-                    <span class="logoText">홈으로</span>
+                    <span class="logoText">홈</span>
                 </a>
             </div>
             <a href="#" class="navHandler"><span class="fa fa-bars"></span></a>
             
-            <!--맨위 검색바 시작-->
-            <div class="search">
-                <span class="searchIcon icon-magnifier"></span>
-                <input type="text" placeholder="장소 검색">
-            </div>
-            <!--맨위 검색바 끝-->
             
             <!--맨위에 알람하고 사용자 설정-->
             <div class="headerUserWraper">
@@ -130,42 +124,66 @@
         <!--컨텐츠 시작 지도 시작-->
         <!--지도시작-->
         <div id="wrapper">
-            <div id="mapView">
-                <div class="mapPlaceholder"><span class="fa fa-spin fa-spinner"></span> 지도를 불러오는 중입니다..</div>
-            </div>
+
         <!--지도끝-->
             
             <!--오른쪽 사이드바 시작-->
-            <div id="content">
+            <div id="content2">
                 <div class="filter">
-                    <h1 class="osLight"> 검색 필터 </h1>
+                    <!--필터 위아래 되는거 -->
                     <a href="#" class="handleFilter"><span class="icon-equalizer"></span></a>
                     <div class="clearfix"></div>
                     
                     <!--공연 장르 필터 시작-->
                     <form class="filterForm">
+                        <!--공연 위에 필터 -->
+                        <div class="row">
+                            <div class="tabsContainer">
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                    <li class="active"><a href="#home" role="tab" data-toggle="tab"><span class="fa fa-group"></span> 뮤지컬</a></li>
+                                    <li><a href="#profile" role="tab" data-toggle="tab"><span class="icon-user"></span> 연극</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-headphones"></span> 콘서트</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="fa fa-bank"></span> 클래식 무용</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="icon-trophy"></span> 전시</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="fa fa-futbol-o"></span> 스포츠</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="icon-music-tone"></span> 버스킹</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="icon-heart"></span> 아마추어동아리</a></li>
+                                    <li><a href="#notifications" role="tab" data-toggle="tab"><span class="icon-bubbles"></span> 기타</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        
+                        
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 formItem">
+
+                                <div class="form-group">
+                                    <div class="col-sm-10">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <a href="#" class="btn btn-green">검색하기</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 formItem">
+                            </div>
+                            
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 formItem">
                                 <div class="formField">
-                                    <label>공연 카테고리</label>
+
+                                    <br>
                                     <!--공연카테고리 토글다운 시작-->
-                                    <a href="#" data-toggle="dropdown" class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                                        <span class="dropdown-label">모두 보기</span>
-                                        <span class="fa fa-angle-down dsArrow"></span>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-select full" role="menu">
-                                        <li class="active"><input type="radio" name="pType" checked="checked"><a href="#">모두 보기</a></li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>뮤지컬</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>연극</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>콘서트</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>클래식 무용</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>전시</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>스포츠</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>버스킹</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>아마추어 동아리</li>
-                                        <li><input type="radio" name="pType"><a href="#"></a>기타</li>
-                                    <!--공연카테고리 토글다운 끝-->
-                                    </ul>
+                                    <div class="buttonsWrapper">
+                                        <div class="btn-group btn-group-justified">
+                                            <div class="btn-group">
+                                                <a href="/culture/pfupload"><button type="button" class="btn btn-blue"> 공연자 등록하기 </button></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -177,21 +195,17 @@
                 <!--오른쪽 사진과 짤막한 공연정보 사이드바-->
                 <div class="resultsList">
                     <div class="row">
-                        <% @p.reverse.each do |x| %>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <a href="/culture/single/<%= x.id %>" class="card">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <a href="/culture/profile" class="card">
                                 
                                 <div class="figure">
-                                    <img src="<%= x.pf_image %>" alt="image" width="200px" height="200px">
+                                    <!--공연자 사진 들어갈것-->
+                                    <img src="/images/prop/1-1.png" alt="image">
                                     <div class="figView"><span class="icon-eye"></span></div>
-                                    <div class="figType">공연 중</div>
                                 </div>
-                                <h2><%= x.pf_title %></h2>
-                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_add_br%> </div>
-                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_date%>  </span><%= x.pf_time%> </div>
-                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_add_lat%> </div>
-                                <div class="cardAddress"><%= x.musical %>  <%= x.play %>  <%= x.concert %> <%= x.classic %> <%= x.jeonsi %> <%= x.sport %> <%= x.busking %> <%= x.amateur %> <%= x.etc %></div>
-
+                                <h2> 공연자 이름 </h2>
+                                <div class="cardAddress"><span class="icon-pointer"></span>주로 하는 공연 장소</div>
+                                <div class="cardAddress">공연 장르</div>
                                 <!--별점-->
                                 <div class="cardRating">
                                     <span class="fa fa-star"></span>
@@ -205,7 +219,6 @@
                                 <div class="clearfix"></div>
                             </a>
                         </div>
-                        <% end %>
                     </div>
                     <!--오른쪽 사이드바 공연 사진 설명 끝-->
                     
@@ -239,4 +252,7 @@
         <script src="/js/bootstrap-datepicker.js"></script>
         <script src="/js/app.js" type="text/javascript"></script>
     </body>
+</html>
+
+</body>
 </html>

@@ -116,9 +116,9 @@
                     <div class="clearfix"></div>
                 </div>
                 <ul>
-                    <li><a href="explore.html"><span class="navIcon icon-compass"></span><span class="navLabel">공연<br>모아보기</span></a></li>
-                    <li><a href="single.html"><span class="navIcon icon-home"></span><span class="navLabel">공연자<br>모아보기</span></a></li>
-                    <li><a href="add.html"><span class="navIcon icon-plus"></span><span class="navLabel">공연 등록</span></a></li>
+                    <li><a href="/culture/explore"><span class="navIcon icon-compass"></span><span class="navLabel">공연<br>모아보기</span></a></li>
+                    <li><a href="/culture/pfadd"><span class="navIcon icon-home"></span><span class="navLabel">공연자<br>모아보기</span></a></li>
+                    <li><a href="/culture/add"><span class="navIcon icon-plus"></span><span class="navLabel">공연 등록</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -213,19 +213,19 @@
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>공연 카테고리</label>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="musical" value="뮤지컬"><span class="fa fa-check"></span> 뮤지컬</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="play" value="연극"><span class="fa fa-check"></span> 연극</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="concert" value="콘서트"><span class="fa fa-check"></span> 콘서트</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="classic" value="클래식 무용"><span class="fa fa-check"></span> 클래식 무용</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="musical" value="뮤지컬"onclick='chkcontrol(0)'><span class="fa fa-check"></span> 뮤지컬</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="play" value="연극" onclick='chkcontrol(1)'><span class="fa fa-check"></span> 연극</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="concert" value="콘서트" onclick='chkcontrol(2)'><span class="fa fa-check"></span> 콘서트</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="classic" value="클래식 무용" onclick='chkcontrol(3)'><span class="fa fa-check"></span> 클래식 무용</label></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="jeonsi" value="전시"><span class="fa fa-check"></span> 전시</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="sport" value="스포츠"><span class="fa fa-check"></span> 스포츠</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="busking" value="버스킹"><span class="fa fa-check"></span> 버스킹</label></div>
-                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="amateur" value="아마추어동아리"><span class="fa fa-check"></span> 아마추어동아리</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="jeonsi" value="전시"onclick='chkcontrol(4)'><span class="fa fa-check"></span> 전시</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="sport" value="스포츠" onclick='chkcontrol(5)'><span class="fa fa-check"></span> 스포츠</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="busking" value="버스킹" onclick='chkcontrol(6)'><span class="fa fa-check"></span> 버스킹</label></div>
+                                    <div class="checkbox custom-checkbox"><label><input type="checkbox" name="amateur" value="아마추어동아리" onclick='chkcontrol(7)'><span class="fa fa-check"></span> 아마추어동아리</label></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -236,7 +236,7 @@
                             </div>
                         </div>
                         <p class="help-block">세개의 카테고리만 선택 가능합니다</p>
-                        <div class="form-group">
+                        <div class="form-group" align="right">
                             <input type='submit' value='등록하기' class="btn btn-green btn-lg">
                         </div>
                     </form>

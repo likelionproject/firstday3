@@ -51,6 +51,13 @@ class CultureController < ApplicationController
         @p = Newpf.all
         
     end
+    def single
+       
+      
+       
+       @pid = Newpf.find(params[:id])
+        
+    end
     
-    def
+    
 end
