@@ -2,11 +2,15 @@ class CreateNewpfs < ActiveRecord::Migration
   def change
     create_table :newpfs do |t|
       
-      t.string :performancename
-      t.string :briefaddress
-      t.text :performancenameinfo
-    
-      t.string :my_image
+      t.string :pf_title
+      t.string :pf_add_br
+      t.text :pf_infor
+      t.string :pf_add_lat
+      t.string :pf_add_lng
+      t.string :pf_image
+      
+      t.date :pf_date
+      t.string :pf_time
       
       t.string :musical
       t.string :play
@@ -18,8 +22,6 @@ class CreateNewpfs < ActiveRecord::Migration
       t.string :amateur
       t.string :etc
 
-
-      t.timestamps null: false
     end
   end
 end

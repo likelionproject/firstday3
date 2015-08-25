@@ -442,7 +442,7 @@
     z-index: 1040;
 }
 .logo {
-    background-color: #0eaaa6;
+    background-color: #ffbc1f;
     float: left;
     width: 70px;
     height: 60px;
@@ -902,7 +902,7 @@ a.userHandler .counter {
     left: 12px;
 }
 #leftSide {
-    background-color: #213837;
+    background-color: #7F7154;
     position: absolute;
     top: 60px;
     left: 0;
@@ -4237,14 +4237,14 @@ body.black {
 }
 .home-title {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 80px;
     color: #fff;
     font-weight: bold;
 }
 .home-subtitle {
     text-align: center;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 30px;
     color: #fff;
     padding-bottom: 20px;
     font-weight: bold;
@@ -4338,7 +4338,7 @@ a.home-navHandler.active {
     color: #fff;
 }
 .highlight {
-    background-color: #0eaaa6;
+    background-color: #ffbc1f;
     padding: 30px;
     text-align: center;
 }

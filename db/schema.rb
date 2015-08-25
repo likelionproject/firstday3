@@ -11,24 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824080244) do
+ActiveRecord::Schema.define(version: 20150825020304) do
 
   create_table "newpfs", force: :cascade do |t|
-    t.string   "performancename"
-    t.string   "briefaddress"
-    t.text     "performancenameinfo"
-    t.string   "my_image"
-    t.string   "musical"
-    t.string   "play"
-    t.string   "concert"
-    t.string   "classic"
-    t.string   "jeonsi"
-    t.string   "sport"
-    t.string   "busking"
-    t.string   "amateur"
-    t.string   "etc"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string "pf_title"
+    t.string "pf_add_br"
+    t.text   "pf_infor"
+    t.string "pf_add_lat"
+    t.string "pf_add_lng"
+    t.string "pf_image"
+    t.date   "pf_date"
+    t.string "pf_time"
+    t.string "musical"
+    t.string "play"
+    t.string "concert"
+    t.string "classic"
+    t.string "jeonsi"
+    t.string "sport"
+    t.string "busking"
+    t.string "amateur"
+    t.string "etc"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username",               default: "", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.integer  "typenum",                default: 0,  null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

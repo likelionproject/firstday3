@@ -150,7 +150,7 @@
                                     <label>공연 카테고리</label>
                                     <!--공연카테고리 토글다운 시작-->
                                     <a href="#" data-toggle="dropdown" class="btn btn-gray dropdown-btn dropdown-toggle propTypeSelect">
-                                        <span class="dropdown-label">모두보기</span>
+                                        <span class="dropdown-label">모두 보기</span>
                                         <span class="fa fa-angle-down dsArrow"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-select full" role="menu">
@@ -182,12 +182,14 @@
                             <a href="single.html" class="card">
                                 
                                 <div class="figure">
-                                    <img src="<%= x.my_image %>" alt="image" width="200px" height="200px">
+                                    <img src="<%= x.pf_image %>" alt="image" width="200px" height="200px">
                                     <div class="figView"><span class="icon-eye"></span></div>
                                     <div class="figType">공연 중</div>
                                 </div>
-                                <h2><%= x.performancename %></h2>
-                                <div class="cardAddress"><span class="icon-pointer"></span><%= x.briefaddress %></div>
+                                <h2><%= x.pf_title %></h2>
+                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_add_br%> </div>
+                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_date%>  </span><%= x.pf_time%> </div>
+                                <div class="cardAddress"><span class="icon-pointer">  </span><%= x.pf_add_lat%> </div>
                                 <div class="cardAddress"><%= x.musical %>  <%= x.play %>  <%= x.concert %> <%= x.classic %> <%= x.jeonsi %> <%= x.sport %> <%= x.busking %> <%= x.amateur %> <%= x.etc %></div>
 
                                 <!--별점-->

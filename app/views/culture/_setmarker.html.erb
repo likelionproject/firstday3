@@ -1,0 +1,71 @@
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=geometry&amp;libraries=places" type="text/javascript"></script>
+</script>
+<script>
+  
+  var center_default = { lat: 37.559708, lng: 126.989298 }; 
+  var markers = [];
+  var marker;
+  function initialize() {
+      
+    var map = new google.maps.Map(document.getElementById('map-select'), {
+      zoom: 12,
+      center: center_default,
+      disableDoubleClickZoom : true,
+      minZoom: 12,
+      scaleControl: false,
+      streetViewControl: false,
+      zoomControl: false
+    });
+    
+    /* 기본 marker 설정 */
+    marker = addMarker(center_default, map);
+    // This event listener calls addMarker() when the map is clicked.
+    /* google.maps.event.addListener(map, 'dblclick', function(event) {
+      addMarker(event.latLng, map);
+    });*/
+
+    /* map click시에 marker 추가 */
+    google.maps.event.addDomListener(map, 'click', function(event){
+        /* 이전의 marker는 숨기고 */
+        marker.setVisible(false);
+        /* 새 marker 추가 */
+        marker = addMarker(event.latLng, map);
+        map.setCenter(event.latLng);
+    });
+    
+    // Adds a marker to the map.
+    function addMarker(location, map) {
+      // Add the marker at the clicked location, and add the next-available label
+      // from the array of alphabetical characters.
+      /* markers 배열에 추가된 marker를 담음 */
+      markers.push(new google.maps.Marker({
+        position: location,
+        map: map,
+        draggable : true
+      }));
+      /* 마지막 원소가 최종 결정된 marker */
+      return markers[markers.length-1];
+    }
+    
+         
+    $('#myModal').on('shown.bs.modal', function(){
+       google.maps.event.trigger(map, 'resize');
+       map.setCenter(center_default);
+    });
+    $('#location-submit').click(function(){
+      if (document.getElementById('mapdata-lat') != null && document.getElementById('mapdata-lng') != null ){
+        document.getElementById('mapdata-lat').setAttribute('value', marker.getPosition().G);
+        document.getElementById('mapdata-lng').setAttribute('value', marker.getPosition().K);
+      }
+      else {
+        $('#article-data').append("<input id='mapdata-lat' type='hidden' name='lat' value='"+ marker.getPosition().G +"' />");
+        $('#article-data').append("<input id='mapdata-lng' type='hidden' name='lng' value='"+ marker.getPosition().K +"' />");
+      }
+      
+    });
+  }
+    
+  /*google.maps.event.addDomListener(window, 'load', initialize);*/
+  
+</script>
